@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Derivation of the [TextFormField] widget simplifying its use
 class EJLTextFormField extends StatelessWidget {
   /// Controller to get and set the text.
   ///
@@ -68,6 +69,7 @@ class EJLTextFormField extends StatelessWidget {
   /// If true, the field will be dense, reducing its height.
   final bool? isDense;
 
+  /// Constructor of the [EJLTextFormField].
   const EJLTextFormField({
     super.key,
     this.controller,
@@ -91,6 +93,7 @@ class EJLTextFormField extends StatelessWidget {
     this.isDense,
   });
 
+  /// Builds the [EJLTextFormField].
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -105,11 +108,29 @@ class EJLTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
-        border: OutlineInputBorder(borderSide: BorderSide(color: borderColor ?? Colors.blue), borderRadius: BorderRadius.circular(10)),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: borderColor ?? Colors.blueAccent, width: 2), borderRadius: BorderRadius.circular(10)),
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: borderColor ?? Colors.blue), borderRadius: BorderRadius.circular(10)),
-        disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey.shade800), borderRadius: BorderRadius.circular(10)),
-        errorBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.red), borderRadius: BorderRadius.circular(10)),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: borderColor ?? Colors.blue),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: borderColor ?? Colors.blueAccent,
+            width: 2,
+          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: borderColor ?? Colors.blue),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey.shade800),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.red),
+          borderRadius: BorderRadius.circular(10),
+        ),
         labelText: labelText,
         labelStyle: labelStyle,
         hintText: hintText,

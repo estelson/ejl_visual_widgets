@@ -1,8 +1,9 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:ejl_visual_widgets/src/buttons/ejl_elevated_button.dart';
-import 'package:ejl_visual_widgets/src/others/ejl_text.dart';
 import 'package:flutter/material.dart';
 
+/// Widget to display a customized dialog, using and based on AwesomeDialog package
+/// [https://pub.dev/packages/awesome_dialog].
 void ejlAlertDialog({
   /// The context in which the widget is inserted
   ///
@@ -44,6 +45,7 @@ void ejlAlertDialog({
   /// default: [false]
   bool? dismissOnBackKeyPress,
 }) {
+  /// Builds the [AwesomeDialog].
   AwesomeDialog(
     isDense: true,
     context: context,
@@ -52,8 +54,18 @@ void ejlAlertDialog({
     desc: messageText,
     descTextStyle: TextStyle(fontSize: 16, color: Colors.grey[800]),
     width: MediaQuery.of(context).size.width * 0.80,
-    btnCancel: onCancelPressed != null ? EJLElevatedButton(onPressed: onCancelPressed, backgroundColor: Colors.red, children: [EJLText(text: btnCancelText ?? "")]) : null,
-    btnOk: EJLElevatedButton(onPressed: onOkPressed, children: [EJLText(text: btnOkText)]),
+    btnCancel:
+        onCancelPressed != null
+            ? EJLElevatedButton(
+              onPressed: onCancelPressed,
+              backgroundColor: Colors.red,
+              children: [Text(btnCancelText ?? "")],
+            )
+            : null,
+    btnOk: EJLElevatedButton(
+      onPressed: onOkPressed,
+      children: [Text(btnOkText)],
+    ),
     dismissOnTouchOutside: dismissOnTouchOutside ?? false,
     dismissOnBackKeyPress: dismissOnBackKeyPress ?? false,
   ).show();

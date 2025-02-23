@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Derivation of the [IconButton] widget simplifying its use
 class EJLIconButton extends StatelessWidget {
   /// Function to execute when the button is pressed.
   ///
@@ -18,10 +19,25 @@ class EJLIconButton extends StatelessWidget {
   /// Padding of the button.
   final EdgeInsetsGeometry? padding;
 
-  const EJLIconButton({super.key, this.onPressed, required this.icon, this.iconColor, this.iconSize, this.padding});
+  /// Constructor of the [EJLIconButton].
+  const EJLIconButton({
+    super.key,
+    this.onPressed,
+    required this.icon,
+    this.iconColor,
+    this.iconSize,
+    this.padding,
+  });
 
+  /// Builds the [EJLIconButton].
   @override
   Widget build(BuildContext context) {
-    return IconButton(onPressed: onPressed, iconSize: iconSize, style: TextButton.styleFrom(iconColor: iconColor ?? Colors.blue), icon: Icon(icon), padding: padding);
+    return IconButton(
+      onPressed: onPressed,
+      iconSize: iconSize,
+      style: TextButton.styleFrom(iconColor: iconColor ?? Colors.blue),
+      icon: Icon(icon),
+      padding: padding,
+    );
   }
 }

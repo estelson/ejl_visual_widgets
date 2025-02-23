@@ -1,6 +1,7 @@
 import 'package:ejl_visual_widgets/src/others/ejl_text.dart';
 import 'package:flutter/material.dart';
 
+/// Derivation of the [TextButton] widget simplifying its use
 class EJLTextButton extends StatelessWidget {
   /// Function to execute when the button is pressed.
   ///
@@ -44,16 +45,34 @@ class EJLTextButton extends StatelessWidget {
   /// If not set, the default border radius will be `10`.
   final double? borderRadius;
 
-  const EJLTextButton({super.key, required this.onPressed, required this.labelText, this.textColor, this.fontSize, this.fontStyle, this.letterSpacing, this.fontWeight, this.borderRadius});
+  /// Constructor of the [EJLTextButton].
+  const EJLTextButton({
+    super.key,
+    required this.onPressed,
+    required this.labelText,
+    this.textColor,
+    this.fontSize,
+    this.fontStyle,
+    this.letterSpacing,
+    this.fontWeight,
+    this.borderRadius,
+  });
 
+  /// Builds the [EJLTextButton].
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
-        textStyle: TextStyle(fontSize: fontSize!, letterSpacing: letterSpacing!, fontWeight: fontWeight!),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
+        textStyle: TextStyle(
+          fontSize: fontSize!,
+          letterSpacing: letterSpacing!,
+          fontWeight: fontWeight!,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
+        ),
       ),
       child: EJLText(text: labelText),
     );

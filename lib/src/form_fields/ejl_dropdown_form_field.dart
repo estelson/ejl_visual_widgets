@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Derivation of the [DropdownButtonFormField] widget simplifying its use
 class EJLDropdownFormField extends StatelessWidget {
   /// List of dropdown items.
   ///
@@ -53,6 +54,7 @@ class EJLDropdownFormField extends StatelessWidget {
   /// Text to display on the error.
   final String? errorMessage;
 
+  /// Constructor of the [EJLDropdownFormField].
   const EJLDropdownFormField({
     super.key,
     required this.items,
@@ -71,6 +73,7 @@ class EJLDropdownFormField extends StatelessWidget {
     this.errorMessage,
   });
 
+  /// Builds the [EJLDropdownFormField].
   @override
   Widget build(BuildContext context) {
     return DropdownButtonFormField(
@@ -80,11 +83,29 @@ class EJLDropdownFormField extends StatelessWidget {
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        border: OutlineInputBorder(borderSide: BorderSide(color: borderColor ?? Colors.blue), borderRadius: BorderRadius.circular(10)),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: borderColor ?? Colors.blueAccent, width: 2), borderRadius: BorderRadius.circular(10)),
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: borderColor ?? Colors.blue), borderRadius: BorderRadius.circular(10)),
-        disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey.shade800), borderRadius: BorderRadius.circular(10)),
-        errorBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.red), borderRadius: BorderRadius.circular(10)),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: borderColor ?? Colors.blue),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: borderColor ?? Colors.blueAccent,
+            width: 2,
+          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: borderColor ?? Colors.blue),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey.shade800),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.red),
+          borderRadius: BorderRadius.circular(10),
+        ),
         labelText: labelText!,
         labelStyle: labelStyle,
         hintText: hintText,

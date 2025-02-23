@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Derivation of the [Text] widget. Simplify its use
+/// and standardize the visual identity of the widget
 class EJLText extends StatelessWidget {
   /// Text to display.
   ///
@@ -33,10 +35,31 @@ class EJLText extends StatelessWidget {
   /// [TextOverflow.visible] - Render overflowing text outside of its container.
   final TextOverflow? overflow;
 
-  const EJLText({super.key, required this.text, this.fontSize, this.fontWeight, this.fontFamily, this.fontStyle, this.textColor, this.overflow});
+  /// Constructor of the [EJLText].
+  const EJLText({
+    super.key,
+    required this.text,
+    this.fontSize,
+    this.fontWeight,
+    this.fontFamily,
+    this.fontStyle,
+    this.textColor,
+    this.overflow,
+  });
 
+  /// Builds the [EJLText].
   @override
   Widget build(BuildContext context) {
-    return Text(text, style: TextStyle(fontStyle: fontStyle, fontSize: fontSize, fontFamily: fontFamily, fontWeight: fontWeight, color: textColor ?? Colors.black87), overflow: overflow);
+    return Text(
+      text,
+      style: TextStyle(
+        fontStyle: fontStyle,
+        fontSize: fontSize,
+        fontFamily: fontFamily,
+        fontWeight: fontWeight,
+        color: textColor ?? Colors.black87,
+      ),
+      overflow: overflow,
+    );
   }
 }

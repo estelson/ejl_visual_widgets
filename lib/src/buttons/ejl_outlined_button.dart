@@ -1,6 +1,7 @@
 import 'package:ejl_visual_widgets/src/others/ejl_text.dart';
 import 'package:flutter/material.dart';
 
+/// Derivation of the [OutlinedButton] widget simplifying its use
 class EJLOutlinedButton extends StatelessWidget {
   /// Function to execute when the button is pressed.
   ///
@@ -55,6 +56,7 @@ class EJLOutlinedButton extends StatelessWidget {
   /// Height of the button.
   final double? height;
 
+  /// Constructor of the [EJLOutlinedButton].
   const EJLOutlinedButton({
     super.key,
     required this.onPressed,
@@ -72,6 +74,7 @@ class EJLOutlinedButton extends StatelessWidget {
     this.height,
   });
 
+  /// Builds the [EJLOutlinedButton].
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
@@ -83,11 +86,23 @@ class EJLOutlinedButton extends StatelessWidget {
         foregroundColor: textColor ?? Colors.blue,
         surfaceTintColor: textColor ?? Colors.blue,
         shadowColor: Colors.grey,
-        textStyle: TextStyle(fontSize: fontSize!, letterSpacing: letterSpacing!, fontWeight: fontWeight!),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
+        textStyle: TextStyle(
+          fontSize: fontSize!,
+          letterSpacing: letterSpacing!,
+          fontWeight: fontWeight!,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
+        ),
         elevation: elevation ?? 3,
       ),
-      child: labelText != null ? EJLText(text: labelText!) : Row(mainAxisAlignment: MainAxisAlignment.center, children: children!),
+      child:
+          labelText != null
+              ? EJLText(text: labelText!)
+              : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: children!,
+              ),
     );
   }
 }

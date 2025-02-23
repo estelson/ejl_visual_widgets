@@ -1,6 +1,7 @@
 import 'package:ejl_visual_widgets/src/others/ejl_text.dart';
 import 'package:flutter/material.dart';
 
+/// Derivation of the [ElevatedButton] widget with a custom icon simplifying its use
 class EJLElevatedButtonIcon extends StatelessWidget {
   /// Function to execute when the button is pressed.
   ///
@@ -77,6 +78,7 @@ class EJLElevatedButtonIcon extends StatelessWidget {
   /// Height of the button.
   final double? height;
 
+  /// Constructor of the [EJLElevatedButtonIcon].
   const EJLElevatedButtonIcon({
     super.key,
     required this.onPressed,
@@ -95,6 +97,7 @@ class EJLElevatedButtonIcon extends StatelessWidget {
     this.height,
   });
 
+  /// Builds the [EJLElevatedButtonIcon].
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
@@ -105,11 +108,23 @@ class EJLElevatedButtonIcon extends StatelessWidget {
         foregroundColor: textColor ?? Colors.white,
         iconAlignment: iconAlignment!,
         shadowColor: Colors.grey,
-        textStyle: TextStyle(fontSize: fontSize!, letterSpacing: letterSpacing!, fontWeight: fontWeight!),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
+        textStyle: TextStyle(
+          fontSize: fontSize!,
+          letterSpacing: letterSpacing!,
+          fontWeight: fontWeight!,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
+        ),
         elevation: elevation ?? 3,
       ),
-      label: labelText != null ? EJLText(text: labelText!) : Row(mainAxisAlignment: MainAxisAlignment.center, children: children!),
+      label:
+          labelText != null
+              ? EJLText(text: labelText!)
+              : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: children!,
+              ),
       icon: Icon(icon),
     );
   }

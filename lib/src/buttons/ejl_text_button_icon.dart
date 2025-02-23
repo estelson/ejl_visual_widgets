@@ -1,6 +1,7 @@
 import 'package:ejl_visual_widgets/src/others/ejl_text.dart';
 import 'package:flutter/material.dart';
 
+/// Derivation of the [TextButton] widget ith a custom icon simplifying its use
 class EJLTextButtonIcon extends StatelessWidget {
   /// Function to execute when the button is pressed.
   ///
@@ -52,6 +53,7 @@ class EJLTextButtonIcon extends StatelessWidget {
   /// If not set, the default border radius will be `10`.
   final double? borderRadius;
 
+  /// Constructor of the [EJLTextButtonIcon].
   const EJLTextButtonIcon({
     super.key,
     required this.onPressed,
@@ -66,14 +68,21 @@ class EJLTextButtonIcon extends StatelessWidget {
     this.borderRadius,
   });
 
+  /// Builds the [EJLTextButtonIcon].
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
       onPressed: onPressed,
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
-        textStyle: TextStyle(fontSize: fontSize!, letterSpacing: letterSpacing!, fontWeight: fontWeight!),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
+        textStyle: TextStyle(
+          fontSize: fontSize!,
+          letterSpacing: letterSpacing!,
+          fontWeight: fontWeight!,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
+        ),
       ),
       icon: icon,
       label: EJLText(text: labelText),
