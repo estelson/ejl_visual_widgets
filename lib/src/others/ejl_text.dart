@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+
+class EJLText extends StatelessWidget {
+  /// Text to display.
+  ///
+  /// [required]
+  final String text;
+
+  /// Font size of the [text].
+  ///
+  /// If not set, the default font size will be used.
+  final double? fontSize;
+
+  /// Font weight of the text.
+  final FontWeight? fontWeight;
+
+  /// Font family of the text.
+  final String? fontFamily;
+
+  /// Font style of the text.
+  final FontStyle? fontStyle;
+
+  /// Color of the [text].
+  final Color? textColor;
+
+  /// How overflowing [text] should be handled.
+  /// Used when text overflows
+  ///
+  /// Values:
+  /// [TextOverflow.clip] - Clip the overflowing text to fix its container.
+  /// [TextOverflow.fade] - Fade the overflowing text to transparent.
+  /// [TextOverflow.ellipsis] - Use an ellipsis to indicate that the text has overflowed.
+  /// [TextOverflow.visible] - Render overflowing text outside of its container.
+  final TextOverflow? overflow;
+
+  const EJLText({super.key, required this.text, this.fontSize, this.fontWeight, this.fontFamily, this.fontStyle, this.textColor, this.overflow});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text, style: TextStyle(fontStyle: fontStyle, fontSize: fontSize, fontFamily: fontFamily, fontWeight: fontWeight, color: textColor ?? Colors.black87), overflow: overflow);
+  }
+}
