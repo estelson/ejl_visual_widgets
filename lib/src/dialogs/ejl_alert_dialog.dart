@@ -1,5 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:ejl_visual_widgets/src/buttons/ejl_elevated_button.dart';
+import 'package:ejl_visual_widgets/ejl_visual_widgets.dart';
 import 'package:flutter/material.dart';
 
 /// Widget to display a customized dialog, using and based on AwesomeDialog package
@@ -50,7 +50,7 @@ void ejlAlertDialog({
     isDense: true,
     context: context,
     dialogType: dialogType ?? DialogType.question,
-    title: titleText,
+    title: titleText ?? "",
     desc: messageText,
     descTextStyle: TextStyle(fontSize: 16, color: Colors.grey[800]),
     width: MediaQuery.of(context).size.width * 0.80,
@@ -59,12 +59,12 @@ void ejlAlertDialog({
             ? EJLElevatedButton(
               onPressed: onCancelPressed,
               backgroundColor: Colors.red,
-              children: [Text(btnCancelText ?? "")],
+              children: [EJLText(text: btnCancelText ?? "")],
             )
             : null,
     btnOk: EJLElevatedButton(
       onPressed: onOkPressed,
-      children: [Text(btnOkText)],
+      children: [EJLText(text: btnOkText)],
     ),
     dismissOnTouchOutside: dismissOnTouchOutside ?? false,
     dismissOnBackKeyPress: dismissOnBackKeyPress ?? false,

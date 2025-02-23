@@ -37,7 +37,7 @@ class EJLIconButton extends StatelessWidget {
       iconSize: iconSize,
       style: TextButton.styleFrom(iconColor: iconColor ?? Colors.blue),
       icon: Icon(icon),
-      padding: padding,
+      padding: padding ?? EdgeInsets.all(5),
     );
   }
 }

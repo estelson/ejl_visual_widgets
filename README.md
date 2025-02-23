@@ -13,7 +13,7 @@ Visual components that speed up development, avoid code repetition and standardi
 Add to pubspec.yaml:
 
 ```dart
-dependencies:ejl_visual_widgets: ^0.0.3
+dependencies:ejl_visual_widgets: ^0.0.4
 ```
 
 The in your .dart files

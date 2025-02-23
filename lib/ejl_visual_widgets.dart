@@ -1,4 +1,4 @@
-library ejl_visual_widgets;
+library;
 
 /**
  * Visual components that speed up development, avoid code repetition and standardize the app's visual identity.

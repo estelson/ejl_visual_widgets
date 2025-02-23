@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.4] - 2025-02-23
+
+### Fixed
+
+- Fixed null value assignment errors
+
 ## [0.0.3] - 2025-02-23
 
 ### Fixed

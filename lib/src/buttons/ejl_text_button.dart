@@ -66,9 +66,9 @@ class EJLTextButton extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
         textStyle: TextStyle(
-          fontSize: fontSize!,
-          letterSpacing: letterSpacing!,
-          fontWeight: fontWeight!,
+          fontSize: fontSize ?? 14,
+          letterSpacing: letterSpacing ?? 1,
+          fontWeight: fontWeight ?? FontWeight.normal,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 10),

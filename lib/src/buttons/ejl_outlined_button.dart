@@ -81,15 +81,14 @@ class EJLOutlinedButton extends StatelessWidget {
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         side: BorderSide(width: 1.5, color: borderColor ?? Colors.blue),
-        minimumSize: Size(width!, height!),
+        minimumSize: Size(width ?? MediaQuery.of(context).size.width, height ?? 50),
         backgroundColor: backgroundColor ?? Colors.white,
         foregroundColor: textColor ?? Colors.blue,
-        surfaceTintColor: textColor ?? Colors.blue,
         shadowColor: Colors.grey,
         textStyle: TextStyle(
-          fontSize: fontSize!,
-          letterSpacing: letterSpacing!,
-          fontWeight: fontWeight!,
+          fontSize: fontSize ?? 14,
+          letterSpacing: letterSpacing ?? 1,
+          fontWeight: fontWeight ?? FontWeight.normal,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
@@ -98,7 +97,7 @@ class EJLOutlinedButton extends StatelessWidget {
       ),
       child:
           labelText != null
-              ? EJLText(text: labelText!)
+              ? EJLText(text: labelText ?? "")
               : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: children!,

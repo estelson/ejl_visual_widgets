@@ -1,6 +1,6 @@
 name: ejl_visual_widgets
 description: "A ready-to-use Flutter visual widgets including buttons, text fields, dialogs, validators, and more."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/estelson/ejl_visual_widgets
 
 environment:
