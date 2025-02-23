@@ -1,12 +1,20 @@
-## [0.0.1] - 23/02/2025
+# Changelog
 
-- Initial build for EJL Visual Widgets.
+## [0.0.3] - 2025-02-23
 
-## [0.0.2] - 23/02/2025
+### Fixed
+
+- Fixes in README.md file
+
+## [0.0.2] - 2025-02-23
+
+### Fixed
 
 - Correction to the package license
 - Updated the documentation of the package classes
 
-## [0.0.3] - 23/02/2025
+## [0.0.1] - 2025-02-23
 
-- Fixes in README.md file
+### Created
+
+- Initial build for EJL Visual Widgets.
