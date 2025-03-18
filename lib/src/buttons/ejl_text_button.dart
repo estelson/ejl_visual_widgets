@@ -65,9 +65,7 @@ class EJLTextButton extends StatelessWidget {
       onPressed: onPressed,
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
-        textStyle: TextStyle(
-          letterSpacing: letterSpacing,
-        ),
+        textStyle: TextStyle(letterSpacing: letterSpacing),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),

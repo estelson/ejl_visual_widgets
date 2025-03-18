@@ -93,9 +93,7 @@ class EJLElevatedButton extends StatelessWidget {
         backgroundColor: backgroundColor ?? Colors.blue,
         foregroundColor: textColor ?? Colors.white,
         shadowColor: Colors.grey,
-        textStyle: TextStyle(
-          letterSpacing: letterSpacing,
-        ),
+        textStyle: TextStyle(letterSpacing: letterSpacing),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),
@@ -103,17 +101,18 @@ class EJLElevatedButton extends StatelessWidget {
       ),
 
       /// If [labelText] is not set, the [children] will be displayed.
-      child: labelText != null
-          ? EJLText(
-              text: labelText ?? "",
-              fontSize: fontSize ?? 16,
-              fontWeight: fontWeight ?? FontWeight.bold,
-              textColor: textColor ?? Colors.white,
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: children!,
-            ),
+      child:
+          labelText != null
+              ? EJLText(
+                text: labelText ?? "",
+                fontSize: fontSize ?? 16,
+                fontWeight: fontWeight ?? FontWeight.bold,
+                textColor: textColor ?? Colors.white,
+              )
+              : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: children!,
+              ),
     );
   }
 }

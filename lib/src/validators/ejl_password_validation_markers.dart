@@ -50,13 +50,17 @@ class EJLPasswordValidationMarkers extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                containsUpperCase ? "\u{2713}  1 uppercase" : "\u{2717}  1 uppercase",
+                containsUpperCase
+                    ? "\u{2713}  1 uppercase"
+                    : "\u{2717}  1 uppercase",
                 style: TextStyle(
                   color: containsUpperCase ? Colors.green : Colors.red,
                 ),
               ),
               Text(
-                containsLowerCase ? "\u{2713}  1 lowercase" : "\u{2717}  1 lowercase",
+                containsLowerCase
+                    ? "\u{2713}  1 lowercase"
+                    : "\u{2717}  1 lowercase",
                 style: TextStyle(
                   color: containsLowerCase ? Colors.green : Colors.red,
                 ),
@@ -73,13 +77,17 @@ class EJLPasswordValidationMarkers extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                containsSpecialChar ? "\u{2713}  1 special character" : "\u{2717}  1 special character",
+                containsSpecialChar
+                    ? "\u{2713}  1 special character"
+                    : "\u{2717}  1 special character",
                 style: TextStyle(
                   color: containsSpecialChar ? Colors.green : Colors.red,
                 ),
               ),
               Text(
-                contains8Length ? "\u{2713}  8 minimum characters" : "\u{2717}  8 minimum characters",
+                contains8Length
+                    ? "\u{2713}  8 minimum characters"
+                    : "\u{2717}  8 minimum characters",
                 style: TextStyle(
                   color: contains8Length ? Colors.green : Colors.red,
                 ),

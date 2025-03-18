@@ -105,10 +105,7 @@ class EJLOutlinedButtonIcon extends StatelessWidget {
     return OutlinedButton.icon(
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
-        side: BorderSide(
-          width: 1.5,
-          color: borderColor ?? Colors.blue,
-        ),
+        side: BorderSide(width: 1.5, color: borderColor ?? Colors.blue),
         minimumSize: Size(
           width ?? MediaQuery.of(context).size.width,
           height ?? 50,
@@ -124,17 +121,18 @@ class EJLOutlinedButtonIcon extends StatelessWidget {
         iconColor: textColor ?? Colors.blue,
         iconSize: iconSize ?? 24,
       ),
-      label: labelText != null
-          ? EJLText(
-              text: labelText ?? "",
-              fontSize: fontSize ?? 16,
-              fontWeight: fontWeight ?? FontWeight.bold,
-              textColor: textColor ?? Colors.blue,
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: children!,
-            ),
+      label:
+          labelText != null
+              ? EJLText(
+                text: labelText ?? "",
+                fontSize: fontSize ?? 16,
+                fontWeight: fontWeight ?? FontWeight.bold,
+                textColor: textColor ?? Colors.blue,
+              )
+              : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: children!,
+              ),
       icon: Icon(icon),
     );
   }
