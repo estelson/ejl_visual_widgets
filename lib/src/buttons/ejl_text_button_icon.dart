@@ -35,6 +35,11 @@ class EJLTextButtonIcon extends StatelessWidget {
   /// If not set, the default font size will be used.
   final double? fontSize;
 
+  /// Font size of the [iconSize].
+  ///
+  /// If not set, the default font size will be used.
+  final double? iconSize;
+
   /// Font style of the [labelText].
   ///
   /// If not set, the default font style will be used.
@@ -62,6 +67,7 @@ class EJLTextButtonIcon extends StatelessWidget {
     this.iconColor,
     required this.icon,
     this.fontSize,
+    this.iconSize,
     this.fontStyle,
     this.letterSpacing,
     this.fontWeight,
@@ -75,17 +81,20 @@ class EJLTextButtonIcon extends StatelessWidget {
       onPressed: onPressed,
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
-        textStyle: TextStyle(
-          fontSize: fontSize ?? 14,
-          letterSpacing: letterSpacing ?? 1,
-          fontWeight: fontWeight ?? FontWeight.normal,
-        ),
+        textStyle: TextStyle(letterSpacing: letterSpacing),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),
+        iconColor: textColor ?? Colors.blue,
+        iconSize: iconSize ?? 20,
       ),
       icon: Icon(icon),
-      label: EJLText(text: labelText),
+      label: EJLText(
+        text: labelText,
+        fontSize: fontSize,
+        fontWeight: fontWeight ?? FontWeight.normal,
+        textColor: textColor ?? Colors.blue,
+      ),
     );
   }
 }

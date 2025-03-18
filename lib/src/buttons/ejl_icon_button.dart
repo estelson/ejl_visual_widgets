@@ -34,8 +34,10 @@ class EJLIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: onPressed,
-      iconSize: iconSize,
-      style: TextButton.styleFrom(iconColor: iconColor ?? Colors.blue),
+      iconSize: iconSize ?? 32,
+      style: TextButton.styleFrom(
+        iconColor: iconColor ?? Colors.blue,
+      ),
       icon: Icon(icon),
       padding: padding ?? EdgeInsets.all(5),
     );

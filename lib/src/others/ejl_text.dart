@@ -20,10 +20,18 @@ class EJLText extends StatelessWidget {
   final String? fontFamily;
 
   /// Font style of the text.
+  ///
+  /// [FontStyle.normal]
+  /// [FontStyle.italic]
+  ///
+  /// If not set, the default [FontStyle.normal] will be used.
   final FontStyle? fontStyle;
 
   /// Color of the [text].
   final Color? textColor;
+
+  /// Style of the [text].
+  final TextStyle? textStyle;
 
   /// How overflowing [text] should be handled.
   /// Used when text overflows
@@ -45,6 +53,7 @@ class EJLText extends StatelessWidget {
     this.fontStyle,
     this.textColor,
     this.overflow,
+    this.textStyle,
   });
 
   /// Builds the [EJLText].
@@ -52,13 +61,14 @@ class EJLText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        fontStyle: fontStyle,
-        fontSize: fontSize,
-        fontFamily: fontFamily,
-        fontWeight: fontWeight,
-        color: textColor ?? Colors.black87,
-      ),
+      style: textStyle ??
+          TextStyle(
+            fontStyle: fontStyle,
+            fontSize: fontSize,
+            fontFamily: fontFamily,
+            fontWeight: fontWeight,
+            color: textColor,
+          ),
       overflow: overflow,
     );
   }

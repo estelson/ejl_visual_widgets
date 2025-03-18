@@ -8,8 +8,6 @@ class EJLDropdownFormField extends StatelessWidget {
   final List<DropdownMenuItem<dynamic>> items;
 
   /// Function to execute when the value is changed.
-  ///
-  /// [required]
   final ValueChanged<dynamic>? onChanged;
 
   /// Widget to display on the left side of the field.

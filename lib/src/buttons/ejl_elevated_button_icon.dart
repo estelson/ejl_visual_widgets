@@ -52,6 +52,11 @@ class EJLElevatedButtonIcon extends StatelessWidget {
   /// If not set, the default font size will be used.
   final double? fontSize;
 
+  /// Font size of the [iconSize].
+  ///
+  /// If not set, the default font size will be used.
+  final double? iconSize;
+
   /// Letter spacing of the [labelText].
   ///
   /// If not set, the default letter spacing will be used.
@@ -89,6 +94,7 @@ class EJLElevatedButtonIcon extends StatelessWidget {
     this.textColor,
     this.backgroundColor,
     this.fontSize,
+    this.iconSize,
     this.letterSpacing,
     this.fontWeight,
     this.elevation,
@@ -103,28 +109,35 @@ class EJLElevatedButtonIcon extends StatelessWidget {
     return ElevatedButton.icon(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        minimumSize: Size(width ?? MediaQuery.of(context).size.width, height ?? 50),
+        minimumSize: Size(
+          width ?? MediaQuery.of(context).size.width,
+          height ?? 50,
+        ),
         backgroundColor: backgroundColor ?? Colors.blue,
         foregroundColor: textColor ?? Colors.white,
         iconAlignment: iconAlignment ?? IconAlignment.start,
         shadowColor: Colors.grey,
         textStyle: TextStyle(
-          fontSize: fontSize ?? 14,
-          letterSpacing: letterSpacing ?? 1,
-          fontWeight: fontWeight ?? FontWeight.normal,
+          letterSpacing: letterSpacing,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),
         elevation: elevation ?? 3,
+        iconColor: textColor ?? Colors.white,
+        iconSize: iconSize ?? 24,
       ),
-      label:
-          labelText != null
-              ? EJLText(text: labelText ?? "")
-              : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: children!,
-              ),
+      label: labelText != null
+          ? EJLText(
+              text: labelText ?? "",
+              fontSize: fontSize ?? 16,
+              fontWeight: fontWeight ?? FontWeight.bold,
+              textColor: textColor ?? Colors.white,
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: children!,
+            ),
       icon: Icon(icon),
     );
   }

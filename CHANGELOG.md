@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.0.5] - 2025-03-18
+
+### Fixed
+
+- Button components
+- Dialogs
+- Form fields
+
+### Implemented
+
+- Validators
+
+### Coming soon
+
+- Dropdown component
+- Connectivity check methods
+- Formatters
+- Custom AppBar
+- Responsiveness
+- Macro components
+- Others
+
 ## [0.0.4] - 2025-02-23
 
 ### Fixed

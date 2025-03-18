@@ -66,15 +66,18 @@ class EJLTextButton extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
         textStyle: TextStyle(
-          fontSize: fontSize ?? 14,
-          letterSpacing: letterSpacing ?? 1,
-          fontWeight: fontWeight ?? FontWeight.normal,
+          letterSpacing: letterSpacing,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),
       ),
-      child: EJLText(text: labelText),
+      child: EJLText(
+        text: labelText,
+        fontSize: fontSize,
+        fontWeight: fontWeight ?? FontWeight.normal,
+        textColor: textColor ?? Colors.blue,
+      ),
     );
   }
 }
