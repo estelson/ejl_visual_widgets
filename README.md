@@ -14,7 +14,7 @@ Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  ejl_visual_widgets: ^0.0.5
+  ejl_visual_widgets: ^0.0.6
 ```
 
 The in your .dart files
