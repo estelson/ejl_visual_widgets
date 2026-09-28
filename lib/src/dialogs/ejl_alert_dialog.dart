@@ -70,17 +70,37 @@ void showEJLAlertDialog({
     dialogType: dialogType ?? DialogType.info,
     title: titleText ?? "",
     desc: messageText,
-    descTextStyle: TextStyle(fontSize: 16, color: Colors.grey[800]),
+    descTextStyle: TextStyle(
+      fontSize: 16,
+      color: Colors.grey[800],
+    ),
     width: MediaQuery.of(context).size.width * 0.80,
     btnCancel:
         onCancelPressed != null
             ? EJLElevatedButton(
               onPressed: onCancelPressed,
               backgroundColor: Colors.red,
-              children: [EJLText(text: btnCancelText ?? "", fontWeight: FontWeight.bold, textColor: Colors.white, fontSize: 16)],
+              children: [
+                EJLText(
+                  text: btnCancelText ?? "",
+                  fontWeight: FontWeight.bold,
+                  textColor: Colors.white,
+                  fontSize: 16,
+                ),
+              ],
             )
             : null,
-    btnOk: EJLElevatedButton(onPressed: onOkPressed, children: [EJLText(text: btnOkText, fontWeight: FontWeight.bold, textColor: Colors.white, fontSize: 16)]),
+    btnOk: EJLElevatedButton(
+      onPressed: onOkPressed,
+      children: [
+        EJLText(
+          text: btnOkText,
+          fontWeight: FontWeight.bold,
+          textColor: Colors.white,
+          fontSize: 16,
+        ),
+      ],
+    ),
     dismissOnTouchOutside: dismissOnTouchOutside ?? false,
     dismissOnBackKeyPress: dismissOnBackKeyPress ?? false,
     showCloseIcon: showCloseIcon ?? false,

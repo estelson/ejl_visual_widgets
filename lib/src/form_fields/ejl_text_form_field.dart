@@ -118,7 +118,9 @@ class EJLTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: borderColor ?? Colors.blue),
+          borderSide: BorderSide(
+            color: borderColor ?? Colors.blue,
+          ),
           borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
@@ -129,19 +131,28 @@ class EJLTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: borderColor ?? Colors.blue),
+          borderSide: BorderSide(
+            color: borderColor ?? Colors.blue,
+          ),
           borderRadius: BorderRadius.circular(10),
         ),
         disabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey.shade600),
+          borderSide: BorderSide(
+            color: Colors.grey.shade600,
+          ),
           borderRadius: BorderRadius.circular(10),
         ),
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red),
+          borderSide: const BorderSide(
+            color: Colors.red,
+          ),
           borderRadius: BorderRadius.circular(10),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 2),
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 2,
+          ),
           borderRadius: BorderRadius.circular(10),
         ),
         labelText: labelText,

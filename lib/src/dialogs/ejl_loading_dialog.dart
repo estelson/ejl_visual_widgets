@@ -8,7 +8,10 @@ class EJLLoadingDialog extends StatelessWidget {
   final String? messageText;
 
   /// Constructor of the [EJLLoadingDialog].
-  const EJLLoadingDialog({super.key, this.messageText});
+  const EJLLoadingDialog({
+    super.key,
+    this.messageText,
+  });
 
   /// Builds the [EJLLoadingDialog].
   @override
@@ -18,7 +21,9 @@ class EJLLoadingDialog extends StatelessWidget {
       child: Dialog(
         elevation: 3,
         shadowColor: Colors.grey,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
         backgroundColor: Colors.white,
         alignment: Alignment.center,
         child: Container(

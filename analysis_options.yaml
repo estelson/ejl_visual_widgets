@@ -3,5 +3,13 @@ analyzer:
     - build/**
 include: package:flutter_lints/flutter.yaml
 
+formatter:
+  page_width: 80
+  trailing_commas: preserve
+
+linter:
+  rules:
+    require_trailing_commas: true
+
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

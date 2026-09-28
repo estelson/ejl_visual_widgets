@@ -82,12 +82,19 @@ class EJLTextButtonIcon extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
         textStyle: TextStyle(letterSpacing: letterSpacing),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
+        ),
         iconColor: textColor ?? Colors.blue,
         iconSize: iconSize ?? 20,
       ),
       icon: Icon(icon),
-      label: EJLText(text: labelText, fontSize: fontSize, fontWeight: fontWeight ?? FontWeight.normal, textColor: textColor ?? Colors.blue),
+      label: EJLText(
+        text: labelText,
+        fontSize: fontSize,
+        fontWeight: fontWeight ?? FontWeight.normal,
+        textColor: textColor ?? Colors.blue,
+      ),
     );
   }
 }

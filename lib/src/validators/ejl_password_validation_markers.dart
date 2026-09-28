@@ -38,7 +38,9 @@ class EJLPasswordValidationMarkers extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10),
+        ),
         border: Border.all(color: Colors.grey.shade300),
         color: Colors.grey.shade100,
       ),
