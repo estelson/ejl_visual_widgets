@@ -7,17 +7,19 @@ class EJLOutlinedButton extends StatelessWidget {
   ///
   /// If no value is assigned or the value is null, the button will be disabled.
   ///
-  /// [required]
+  /// **Required.**
   final VoidCallback onPressed;
 
   /// Text to display on the button.
+  ///
+  /// **Required** if [children] is not set.
   final String? labelText;
 
   /// List of widgets to display inside the button.
   ///
   /// If not set, only the [labelText] will be displayed.
   ///
-  /// In this case, the [labelText] property is [required]
+  /// In this case, the [labelText] property is **required**.
   final List<Widget>? children;
 
   /// Color of the [labelText].
@@ -81,31 +83,18 @@ class EJLOutlinedButton extends StatelessWidget {
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         side: BorderSide(width: 1.5, color: borderColor ?? Colors.blue),
-        minimumSize: Size(
-          width ?? MediaQuery.of(context).size.width,
-          height ?? 50,
-        ),
+        minimumSize: Size(width ?? MediaQuery.of(context).size.width, height ?? 50),
         backgroundColor: backgroundColor ?? Colors.white,
         foregroundColor: textColor ?? Colors.blue,
         shadowColor: Colors.grey,
         textStyle: TextStyle(letterSpacing: letterSpacing),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
         elevation: elevation ?? 3,
       ),
       child:
           labelText != null
-              ? EJLText(
-                text: labelText ?? "",
-                fontSize: fontSize ?? 16,
-                fontWeight: fontWeight ?? FontWeight.bold,
-                textColor: textColor ?? Colors.blue,
-              )
-              : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: children!,
-              ),
+              ? EJLText(text: labelText ?? "", fontSize: fontSize ?? 16, fontWeight: fontWeight ?? FontWeight.bold, textColor: textColor ?? Colors.blue)
+              : Row(mainAxisAlignment: MainAxisAlignment.center, children: children!),
     );
   }
 }

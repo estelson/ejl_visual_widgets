@@ -7,7 +7,7 @@ class EJLElevatedButton extends StatelessWidget {
   ///
   /// If no value is assigned or the value is null, the button will be disabled.
   ///
-  /// [required]
+  /// **Required.**
   final VoidCallback onPressed;
 
   /// Text to display on the button.
@@ -17,7 +17,7 @@ class EJLElevatedButton extends StatelessWidget {
   ///
   /// If not set, only the [labelText] will be displayed.
   ///
-  /// In this case, the [labelText] property is [required]
+  /// In this case, the [labelText] property is **required**.
   final List<Widget>? children;
 
   /// Color of the [labelText].
@@ -86,33 +86,20 @@ class EJLElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        minimumSize: Size(
-          width ?? MediaQuery.of(context).size.width,
-          height ?? 50,
-        ),
+        minimumSize: Size(width ?? MediaQuery.of(context).size.width, height ?? 50),
         backgroundColor: backgroundColor ?? Colors.blue,
         foregroundColor: textColor ?? Colors.white,
         shadowColor: Colors.grey,
         textStyle: TextStyle(letterSpacing: letterSpacing),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
         elevation: elevation ?? 3,
       ),
 
       /// If [labelText] is not set, the [children] will be displayed.
       child:
           labelText != null
-              ? EJLText(
-                text: labelText ?? "",
-                fontSize: fontSize ?? 16,
-                fontWeight: fontWeight ?? FontWeight.bold,
-                textColor: textColor ?? Colors.white,
-              )
-              : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: children!,
-              ),
+              ? EJLText(text: labelText ?? "", fontSize: fontSize ?? 16, fontWeight: fontWeight ?? FontWeight.bold, textColor: textColor ?? Colors.white)
+              : Row(mainAxisAlignment: MainAxisAlignment.center, children: children!),
     );
   }
 }

@@ -8,22 +8,22 @@ import 'package:flutter/material.dart';
 void showEJLAlertDialog({
   /// The context in which the widget is inserted
   ///
-  /// [required]
+  /// **Required.**
   required BuildContext context,
 
   /// Text to display on the body of dialog.
   ///
-  /// [required]
+  /// **Required.**
   required String messageText,
 
   /// Text to display on the ok button.
   ///
-  /// [required]
+  /// **Required.**
   required String btnOkText,
 
   /// Function to execute when the ok button is pressed.
   ///
-  /// [required]
+  /// **Required.**
   required VoidCallback onOkPressed,
 
   /// Text to display on the dialog title.
@@ -77,27 +77,10 @@ void showEJLAlertDialog({
             ? EJLElevatedButton(
               onPressed: onCancelPressed,
               backgroundColor: Colors.red,
-              children: [
-                EJLText(
-                  text: btnCancelText ?? "",
-                  fontWeight: FontWeight.bold,
-                  textColor: Colors.white,
-                  fontSize: 16,
-                ),
-              ],
+              children: [EJLText(text: btnCancelText ?? "", fontWeight: FontWeight.bold, textColor: Colors.white, fontSize: 16)],
             )
             : null,
-    btnOk: EJLElevatedButton(
-      onPressed: onOkPressed,
-      children: [
-        EJLText(
-          text: btnOkText,
-          fontWeight: FontWeight.bold,
-          textColor: Colors.white,
-          fontSize: 16,
-        ),
-      ],
-    ),
+    btnOk: EJLElevatedButton(onPressed: onOkPressed, children: [EJLText(text: btnOkText, fontWeight: FontWeight.bold, textColor: Colors.white, fontSize: 16)]),
     dismissOnTouchOutside: dismissOnTouchOutside ?? false,
     dismissOnBackKeyPress: dismissOnBackKeyPress ?? false,
     showCloseIcon: showCloseIcon ?? false,
@@ -108,7 +91,7 @@ void showEJLAlertDialog({
 void dismissEJLAlertDialog({
   /// The context in which the widget is inserted
   ///
-  /// [required]
+  /// **Required**.
   required BuildContext context,
 }) {
   Navigator.pop(context);

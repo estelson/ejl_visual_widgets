@@ -7,7 +7,7 @@ class EJLOutlinedButtonIcon extends StatelessWidget {
   ///
   /// If no value is assigned or the value is null, the button will be disabled.
   ///
-  /// [required]
+  /// **Required.**
   final VoidCallback onPressed;
 
   /// Text to display on the button.
@@ -15,7 +15,7 @@ class EJLOutlinedButtonIcon extends StatelessWidget {
 
   /// Icon to display on the button.
   ///
-  /// [required]
+  /// **Required.**
   final IconData icon;
 
   /// Alignment of the icon.
@@ -34,7 +34,7 @@ class EJLOutlinedButtonIcon extends StatelessWidget {
   ///
   /// If not set, only the [labelText] will be displayed.
   ///
-  /// In this case, the [labelText] property is [required]
+  /// In this case, the [labelText] property is **required**.
   final List<Widget>? children;
 
   /// Color of the [labelText].
@@ -106,33 +106,20 @@ class EJLOutlinedButtonIcon extends StatelessWidget {
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
         side: BorderSide(width: 1.5, color: borderColor ?? Colors.blue),
-        minimumSize: Size(
-          width ?? MediaQuery.of(context).size.width,
-          height ?? 50,
-        ),
+        minimumSize: Size(width ?? MediaQuery.of(context).size.width, height ?? 50),
         backgroundColor: backgroundColor ?? Colors.white,
         foregroundColor: textColor ?? Colors.blue,
         shadowColor: Colors.grey,
         textStyle: TextStyle(letterSpacing: letterSpacing ?? 1),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
         elevation: elevation ?? 3,
         iconColor: textColor ?? Colors.blue,
         iconSize: iconSize ?? 24,
       ),
       label:
           labelText != null
-              ? EJLText(
-                text: labelText ?? "",
-                fontSize: fontSize ?? 16,
-                fontWeight: fontWeight ?? FontWeight.bold,
-                textColor: textColor ?? Colors.blue,
-              )
-              : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: children!,
-              ),
+              ? EJLText(text: labelText ?? "", fontSize: fontSize ?? 16, fontWeight: fontWeight ?? FontWeight.bold, textColor: textColor ?? Colors.blue)
+              : Row(mainAxisAlignment: MainAxisAlignment.center, children: children!),
       icon: Icon(icon),
     );
   }

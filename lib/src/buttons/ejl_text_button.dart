@@ -7,12 +7,12 @@ class EJLTextButton extends StatelessWidget {
   ///
   /// If no value is assigned or the value is null, the button will be disabled.
   ///
-  /// [required]
+  /// **Required.**
   final VoidCallback onPressed;
 
   /// Text to display on the button.
   ///
-  /// [required]
+  /// **Required.**
   final String labelText;
 
   /// Color of the [labelText].
@@ -46,17 +46,7 @@ class EJLTextButton extends StatelessWidget {
   final double? borderRadius;
 
   /// Constructor of the [EJLTextButton].
-  const EJLTextButton({
-    super.key,
-    required this.onPressed,
-    required this.labelText,
-    this.textColor,
-    this.fontSize,
-    this.fontStyle,
-    this.letterSpacing,
-    this.fontWeight,
-    this.borderRadius,
-  });
+  const EJLTextButton({super.key, required this.onPressed, required this.labelText, this.textColor, this.fontSize, this.fontStyle, this.letterSpacing, this.fontWeight, this.borderRadius});
 
   /// Builds the [EJLTextButton].
   @override
@@ -66,16 +56,9 @@ class EJLTextButton extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
         textStyle: TextStyle(letterSpacing: letterSpacing),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
       ),
-      child: EJLText(
-        text: labelText,
-        fontSize: fontSize,
-        fontWeight: fontWeight ?? FontWeight.normal,
-        textColor: textColor ?? Colors.blue,
-      ),
+      child: EJLText(text: labelText, fontSize: fontSize, fontWeight: fontWeight ?? FontWeight.normal, textColor: textColor ?? Colors.blue),
     );
   }
 }

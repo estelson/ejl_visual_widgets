@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class EJLText extends StatelessWidget {
   /// Text to display.
   ///
-  /// [required]
+  /// **Required.**
   final String text;
 
   /// Font size of the [text].
@@ -44,33 +44,11 @@ class EJLText extends StatelessWidget {
   final TextOverflow? overflow;
 
   /// Constructor of the [EJLText].
-  const EJLText({
-    super.key,
-    required this.text,
-    this.fontSize,
-    this.fontWeight,
-    this.fontFamily,
-    this.fontStyle,
-    this.textColor,
-    this.overflow,
-    this.textStyle,
-  });
+  const EJLText({super.key, required this.text, this.fontSize, this.fontWeight, this.fontFamily, this.fontStyle, this.textColor, this.overflow, this.textStyle});
 
   /// Builds the [EJLText].
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style:
-          textStyle ??
-          TextStyle(
-            fontStyle: fontStyle,
-            fontSize: fontSize,
-            fontFamily: fontFamily,
-            fontWeight: fontWeight,
-            color: textColor,
-          ),
-      overflow: overflow,
-    );
+    return Text(text, style: textStyle ?? TextStyle(fontStyle: fontStyle, fontSize: fontSize, fontFamily: fontFamily, fontWeight: fontWeight, color: textColor), overflow: overflow);
   }
 }

@@ -7,12 +7,12 @@ class EJLTextButtonIcon extends StatelessWidget {
   ///
   /// If no value is assigned or the value is null, the button will be disabled.
   ///
-  /// [required]
+  /// **Required.**
   final VoidCallback onPressed;
 
   /// Text to display on the button.
   ///
-  /// [required]
+  /// **Required.**
   final String labelText;
 
   /// Color of the [labelText].
@@ -22,7 +22,7 @@ class EJLTextButtonIcon extends StatelessWidget {
 
   /// Icon to display on the button.
   ///
-  /// [required]
+  /// **Required.**
   final IconData icon;
 
   /// Color of the [icon].
@@ -82,19 +82,12 @@ class EJLTextButtonIcon extends StatelessWidget {
       style: TextButton.styleFrom(
         foregroundColor: textColor ?? Colors.blue,
         textStyle: TextStyle(letterSpacing: letterSpacing),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius ?? 10)),
         iconColor: textColor ?? Colors.blue,
         iconSize: iconSize ?? 20,
       ),
       icon: Icon(icon),
-      label: EJLText(
-        text: labelText,
-        fontSize: fontSize,
-        fontWeight: fontWeight ?? FontWeight.normal,
-        textColor: textColor ?? Colors.blue,
-      ),
+      label: EJLText(text: labelText, fontSize: fontSize, fontWeight: fontWeight ?? FontWeight.normal, textColor: textColor ?? Colors.blue),
     );
   }
 }
